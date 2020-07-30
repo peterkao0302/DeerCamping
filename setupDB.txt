@@ -1,0 +1,67 @@
+create database db_dearcamping default character set utf8;
+
+use db_dearcamping ;
+
+//存tentID 每個帳棚tentID會對應到區域campArea
+//儲存營區ID (金額 帳棚獨立出來)  設定帳棚總數=tentQty
+create table campID {
+    campID int auto_increment primary key,
+    memberID varchar(200),
+    campAddress varchar(200),
+    campArea varchar(200),       
+    tentQty varchar(200),    
+    info varchar(200),
+    equipment varchar(200),
+    themeID varchar(200),
+    hotID varchar(200),
+    area varchar(200),
+    star varchar(200),
+    photo varchar(200) 
+}
+
+//個別儲存帳棚 包含價格
+create table tentID (
+    campArea varchar(200),
+    tentID varchar(200),    
+    tentPrice varchar(200), 
+    checkInDate  varchar(200),
+    checkOutDate varchar(200)
+)
+
+//儲存訂單id 帳棚個別存  tent A1 A2 A3 A4 
+create table orderID (
+    orderID int auto_increment primary key,
+    memberID varchar(200),
+    campID varchar(200),
+    campArea varchar(200),
+    tentID varchar(200),      
+    checkInDate  varchar(200),
+    checkOutDate varchar(200),
+    totalPrice  varchar(200),
+    payWay varchar(200),
+    state varchar(200)
+)
+
+//儲存會員id
+create table memberID (                
+    memberID int auto_increment primary key,   
+    userName  varchar(200), 
+    gender varchar(60),
+    eMail  varchar(200), 
+    phone  varchar(200),
+    photo  varchar(200),
+    password  varchar(200)    
+)
+
+
+
+create table themeID (
+
+)
+create table hotID (
+
+)
+
+目前缺發文資料庫 themeID hotID
+
+
